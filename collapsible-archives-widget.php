@@ -43,7 +43,7 @@ class caw_widget extends WP_Widget {
   // Creating widget front-end
 
   public function widget( $args, $instance ) {
-    wp_enqueue_style( 'caw_widget-style', plugins_url('css-accordion.css', __FILE__) );
+    wp_enqueue_style( 'caw_widget-style', plugins_url('css-accordion.min.css', __FILE__) );
 
     $title = apply_filters( 'widget_title', $instance['title'] );
 
