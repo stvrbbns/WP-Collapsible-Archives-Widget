@@ -1,7 +1,7 @@
 <?php
 /*
   Plugin Name: Collapsible Archives Widget
-  Description: Adds a widget which displays collapsible archive links organized by year then month.
+  Description: Adds a widget which displays collapsible archive links organized by year then month. CSS-only, no JavaScript.
 */
 
 /* Copyright (C) 2017 Stephen T. Robbins
