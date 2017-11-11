@@ -111,7 +111,7 @@ class caw_widget extends WP_Widget {
         }
         $output .= '<li>
   <input id="archive-' . $result_year->year . '" type="checkbox" name="archive_years">
-  <label for="archive-' . $result_year->year . '">' . $result_year->year . $after . '</label>
+  <label for="archive-' . $result_year->year . '"><span class="archive_year">' . $result_year->year . '</span>' . $after . '</label>
   <div class="content">
     <ul class="css-accordion">
         ';
