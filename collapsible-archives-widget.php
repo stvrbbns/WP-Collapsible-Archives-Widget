@@ -45,7 +45,7 @@ class caw_widget extends WP_Widget {
   public function widget( $args, $instance ) {
     wp_enqueue_style( 'caw_widget-style', plugins_url('css-accordion.min.css', __FILE__) );
 
-    $title = apply_filters( 'widget_title', $instance['title'] );
+    $title = apply_filters( 'widget_title', empty( $instance['title'] ) ? __( 'Archives' ) : $instance['title'] );
 
     // before and after widget arguments are defined by themes
     echo $args['before_widget'];
