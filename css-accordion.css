@@ -1,0 +1,118 @@
+/* Pure CSS accordion
+ *
+ * Copyright (C) 2017 Stephen T. Robbins
+ * License: MIT : https://choosealicense.com/licenses/mit/
+ *        : CC0 : https://creativecommons.org/publicdomain/zero/1.0/
+*/
+
+/* -- Known Issues, Suggested Updates/Improvements, and Notices --
+  NONE
+*/
+
+/* EXAMPLE
+<ul class="css-accordion">
+  <li>
+    <input id="tab-1" type="checkbox" name="tabs">
+    <label for="tab-1">Accordion Item 1</label>
+    <div class="content">
+      Accordion Menu
+      <ul class="css-accordion">
+        <li>
+          <input id="child-1" type="checkbox" name="tabs">
+          <label for="child-1">Child Menu 1</label>
+          <div class="content">
+            <ul>
+              <li>Grandchild Item 1</li>
+              <li>Grandchild Item 2</li>
+              <li>Grandchild Item 3</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <input id="child-2" type="checkbox" name="tabs">
+          <label for="child-2">Child Menu 2</label>
+          <div class="content">
+            <ul>
+              <li>Grandchild Item 4</li>
+              <li>Grandchild Item 5</li>
+              <li>Grandchild Item 6</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </li>
+        <li>
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </li>
+      </ul>
+    </div>
+  </li>
+  <li>
+    <input id="tab-2" type="checkbox" name="tabs">
+    <label for="tab-2">Accordion Item 2</label>
+    <div class="content">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque...
+    </div>
+  </li>
+  <li class="tab">
+    <input id="tab-3" type="checkbox" name="tabs">
+    <label for="tab-3">Accordion Item 3</label>
+    <div class="content">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.
+    </div>
+  </li>
+</ul>
+*/
+
+ul.css-accordion {
+  margin-bottom: 0px;
+  padding: 0px;
+}
+
+ul.css-accordion > li {
+  position: relative;
+  margin-bottom: 1px;
+  width: 100%;
+  overflow: hidden;
+}
+
+ul.css-accordion > li > input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+ul.css-accordion > li > label {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+ul.css-accordion > li > div.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .35s;
+}
+
+ul.css-accordion > li > input:checked ~ div.content {
+  max-height: none;
+  max-height: unset;
+  padding: 0.5em 1em;
+}
+
+ul.css-accordion > li > label::before {
+  display: inline-block;
+  margin-right: 1em;
+  text-align: center;
+  transition: all .35s;
+}
+
+ul.css-accordion > li > input[type=checkbox] + label::before {
+  content: "\25BC";
+  transform: rotate(-90deg);
+}
+
+ul.css-accordion > li > input[type=checkbox]:checked + label::before {
+  transform: rotate(0deg);
+}
